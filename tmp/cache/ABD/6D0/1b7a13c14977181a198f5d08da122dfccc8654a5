@@ -1,0 +1,14 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352822498.6143079:@value"»[I"­CATARSE.ProjectsPending_backersView = Backbone.View.extend({
+  initialize: function() {
+    $('input[type=checkbox]').live('click', function(){
+      var id = $(this).parent().parent().attr('id')
+      var field = $(this).attr('id').split('__')[0]
+      $.post('/projects/update_attribute_on_the_spot', {
+        id: 'backer__' + field + '__' + id,
+        value: ($(this).is(':checked') ? true : false)
+      })
+    })
+  }
+})
+;
+:EF

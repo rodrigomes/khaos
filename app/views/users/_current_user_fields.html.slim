@@ -1,0 +1,68 @@
+#bootstrap-alert
+  #gravatar_hint.alert.alert-info
+    = link_to 'http://gravatar.com/', :target => :_blank do
+      = image_tag 'gravatar.png', :id => 'gravatar_logo'
+    p= t('.gravatar_hint_html', :link => link_to('Gravatar', 'http://gravatar.com/', :target => :_blank))
+    .clearfix
+#my_avatar
+  h1 = t('.local_avatar')
+  ul
+    li
+      .bootstrap-form
+        = semantic_form_for @user do |f|
+          = f.inputs do
+            p= f.input :uploaded_image, :as => :file, :label => t('.submit_text')
+          = f.actions do
+            .bootstrap-twitter
+              p= f.action :submit, :button_html => {:value => t('.submit'), :class => 'btn', :id => 'image_upload_btn'}
+  h1= t('.my_data')
+#my_data
+  ul
+    li
+      .bootstrap-form
+        = semantic_form_for @user, :html => {:method => :put}  do |f|
+          = f.label :twitter, t('.twitter')
+          = f.text_field :twitter
+          = f.label :facebook_link, t('.facebook_link')
+          = f.text_field :facebook_link
+          = f.label :other_link, t('.other_link')
+          = f.text_field :other_link
+          = f.input :full_name, :required => true, :as => :string
+          = f.input :cpf, :as => :string, :input_html => {:autocomplete => 'off'}
+          = f.input :address_street, :as => :string
+          = f.input :address_number, :as => :string
+          = f.input :address_complement, :required => false, :as => :string
+          = f.input :address_neighbourhood, :as => :string
+          = f.input :address_zip_code, :as => :string, :input_html => {:autocomplete => 'off'}
+          = f.input :address_city, :as => :string
+          = f.input :address_state, :as => :select, :collection => State.array
+          = f.input :phone_number, :as => :string, :input_html => {:autocomplete => 'off'}
+          = f.label :email, t('activerecord.attributes.user.email')
+          #{on_the_spot_edit @user, :email, :tooltip => t('.email_tooltip')}
+          .hint= t('.email_hint')
+          = hidden_field_tag 'id', @user.id
+          = check_box_tag 'newsletter', '1', @user.newsletter,:label => 'saf'
+          = label_tag 'newsletter', t('.newsletter')
+
+          br
+          .bootstrap-twitter
+            p= f.submit t('.update_social_info'), :class => 'btn', :id => "user_submit"
+- if @user.is_devise?
+  #change_password
+    h1= t('.change_password')
+    ul
+      li
+        .bootstrap-form
+          = form_for(@user, :as => :user, :url => registration_path(:user), :html => { :method => :put, :class => 'skip_feed_event' }) do |f|
+            = f.label :password, t('passwords.edit.label_new_password')
+            = f.password_field :password, :class=>'empty'
+            = f.label :password_confirmation
+            = f.password_field :password_confirmation, :class=>'empty'
+            = f.label :current_password
+            = f.password_field :current_password, :class=>'empty'
+            br
+            span.hint= t('.current_password_hint').html_safe
+            br
+            br
+            .bootstrap-twitter
+              p= f.submit 'OK', :class => 'btn'
