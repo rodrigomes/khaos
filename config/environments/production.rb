@@ -65,7 +65,7 @@ Catarse::Application.configure do
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
-   :enable_starttls_auto => true,
+   :enable_starttls_auto => false,
    :address            => 'smtp.gmail.com',
    :port               => 587,
    :domain             => 'khaos-party.herokuapp.com',
