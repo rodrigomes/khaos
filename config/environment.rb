@@ -6,3 +6,4 @@ Catarse::Application.initialize!
 
 ActiveMerchant::Billing::PaypalExpressGateway.default_currency = 'BRL'
 
+ENV['RAILS_ENV'] ||= 'production'

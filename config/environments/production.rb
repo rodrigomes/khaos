@@ -65,12 +65,12 @@ Catarse::Application.configure do
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
-   :enable_starttls_auto => false,
+   :enable_starttls_auto => true,
    :address            => 'smtp.gmail.com',
    :port               => 587,
    :domain             => 'khaos-party.herokuapp.com',
    :authentication     => :plain,
-   :user_name          => 'khaos-party',
+   :user_name          => 'khaoswebmail',
    :password           => ENV['INFO_MAIL_PASS'] # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])
   }
 
