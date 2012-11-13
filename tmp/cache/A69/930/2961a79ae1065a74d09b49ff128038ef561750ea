@@ -1,10 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352822498.0093694:@value"ß[I"Ò$.fn.timedKeyup = function(handler, timeout){
-  if(timeout == null)
-    timeout = 300
-  $(this).keyup(function(data){
-    $(this).stopTime("keyup")
-    $(this).oneTime(timeout, "keyup", handler, 100);
-  })
-}
-;
-:EF

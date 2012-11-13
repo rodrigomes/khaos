@@ -1,0 +1,3 @@
+ENV['INFO_MAIL_PASS'] = "khaosisfun"
+
+ENV['AIRBRAKE_KEY'] = "1234567890"

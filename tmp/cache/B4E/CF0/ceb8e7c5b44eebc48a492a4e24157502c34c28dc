@@ -1,7 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352826640.44836:@value"][I"Q
-
-
-$(function(){
-  var view = window.moipForm = new CATARSE.MoipForm();
-});
-:EF

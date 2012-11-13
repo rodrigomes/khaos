@@ -1,5 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352822498.2797415:@value"h[I"\CATARSE.UserBacks = CATARSE.PaginatedCollection.extend({
-	model: CATARSE.UserBack
-})
-;
-:EF

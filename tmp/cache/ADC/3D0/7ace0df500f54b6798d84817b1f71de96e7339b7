@@ -1,10 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352822498.53104:@value"´[I"§CATARSE.ProjectsEmbedView = Backbone.View.extend({
-  initialize: function() {
-    $(document).ready(function(){
-      $('a').attr('target', '_blank')
-    })
-  }
-})
-
-;
-:EF

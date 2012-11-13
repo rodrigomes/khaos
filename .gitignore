@@ -15,5 +15,8 @@
 /tmp
 
 /public
-tmp/
-log/
+/tmp/
+/log
+
+#envir variables
+

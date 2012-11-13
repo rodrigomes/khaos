@@ -15,3 +15,8 @@
 /tmp
 
 /public
+/tmp/
+/log
+
+#envir variables
+/config/initializers/setup.rb
