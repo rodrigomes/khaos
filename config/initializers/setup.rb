@@ -1,3 +1,5 @@
 ENV['INFO_MAIL_PASS'] = "khaosisfun"
 
 ENV['AIRBRAKE_KEY'] = "792cf593674106410172dab80b9230ec"
+
+ENV['SEND_GRID_PASS'] = "Khaosisfun"
